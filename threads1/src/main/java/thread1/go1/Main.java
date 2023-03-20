@@ -5,13 +5,13 @@ public class Main {
     private static void print(int max) throws InterruptedException {
         for (int i = 0; i < max; i++) {
             System.out.println(Thread.currentThread().getName() + " " + i);
-            Thread.sleep(1000);
+            Thread.sleep(100);
         }
     }
 
     private static void go() {
         try {
-            print(100);
+            print(10);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -30,7 +30,11 @@ public class Main {
         //Thread.sleep(10);
 
         //t1.join();
-        print(30);
+        print(10);
+
+        // targil:
+        // each number should be printed once
+        // 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
 
     }
 }
