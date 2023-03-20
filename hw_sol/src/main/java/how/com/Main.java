@@ -40,6 +40,14 @@ public class Main {
         phones.add(iphone5);
         phones.add(iphone6);
 
+        //phones.stream().limit(33).distinct().count() // 1, 1, 2, 2, 1, --> 1, 2
+        phones.stream().forEach(x -> System.out.println("=== " + x + " ==="));
+
+        var after_filter = phones.stream().filter(x -> x.m_size > 3);
+        phones.add(new MobilePhone("1238", "iphone", 4.1f, 13.9f));
+
+        System.out.println(after_filter.count());
+
         System.out.println(find(phones, "1238"));
 
         HashMap<String, MobilePhone> map_number_to_phone = new HashMap<>();
